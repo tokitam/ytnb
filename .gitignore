@@ -1,0 +1,24 @@
+# --- 秘密情報 (絶対にコミットしない) ---
+.env
+service_account.json
+oauth_client.json
+token.json
+.ytnb_auth_state.json
+*.json
+!config.example.yaml
+
+# --- 環境依存の設定 (config.example.yaml をコピーして使う) ---
+config.yaml
+
+# --- Python ---
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# --- 実行時の出力 ---
+out/
+logs/

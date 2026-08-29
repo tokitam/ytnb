@@ -1,0 +1,24 @@
+# config.yaml にコピーして編集する
+youtube:
+  channel_id: "UCxxxxxxxxxxxxxxxxxxxxxx"   # 対象チャンネル ID
+  max_videos: 20                           # 直近何本の動画を対象にするか
+  overlap_days: 3                          # 差分取得時に何日分さかのぼって再確認するか(返信の取りこぼし対策)
+  full_replies: true                       # 5 件を超える返信も comments.list で全件取得する
+
+sheet:
+  spreadsheet_id: "1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  comments_sheet: "comments"
+  state_sheet: "state"
+
+notebook:
+  sink: "drive"            # drive | local | none
+  retention_days: 30       # 日付ソースを何日分保持するか(0 で無制限)
+  channel_name: ""         # Doc の見出しに使う。空ならチャンネル ID
+  drive:
+    auth: "oauth"          # oauth (推奨・個人アカウント向け) | service_account (共有ドライブがある Workspace 向け)
+    folder_id: ""          # 自分の Drive に作ったフォルダの ID (oauth の場合は共有不要)
+    title_format: "{date} コメント"
+  local:
+    out_dir: "./out"
+
+timezone: "Asia/Tokyo"

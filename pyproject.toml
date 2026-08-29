@@ -1,0 +1,29 @@
+[project]
+name = "ytnb"
+version = "0.1.0"
+description = "YouTube comments -> Google Sheets -> NotebookLM pipeline"
+requires-python = ">=3.12"
+dependencies = [
+    "google-api-python-client>=2.100",
+    "google-auth>=2.20",
+    "google-auth-oauthlib>=1.2",
+    "gspread>=6.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+ytnb = "ytnb.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ytnb*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
